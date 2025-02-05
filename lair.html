@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="secret.css">
+        <title>Oops</title>
+    </head>
+
+    <body>
+
+        <div class="overlay" id="overlay">
+            <img src="img/cellbars.png" alt="Overlay Image">
+        </div>
+    
+        <header>
+            <h1>Monopoly Gallery</h1>
+        </header>
+    
+        <main class="gallery">
+            <img src="img/mono1.png" alt="Image 1" onclick="enlargeImage(this)">
+            <img src="img/mono2.png" alt="Image 2" onclick="enlargeImage(this)">
+            <img src="img/mono3.png" alt="Image 3" onclick="enlargeImage(this)">
+            <img src="img/mono4.png" alt="Image 4" onclick="enlargeImage(this)">
+            <img src="img/mono5.png" alt="Image 5" onclick="enlargeImage(this)">
+            <img src="img/mono6.png" alt="Image 6" onclick="enlargeImage(this)">
+            <img src="img/mono7.png" alt="Image 7" onclick="enlargeImage(this)">
+            <img src="img/mono8.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono9.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono10.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono11.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono12.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono13.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono14.png" alt="Image 8" onclick="enlargeImage(this)">
+            <img src="img/mono15.png" alt="Image 8" onclick="enlargeImage(this)">
+        </main>
+    
+        <div class="lightbox" id="lightbox">
+            <img id="lightbox-img" src="" alt="Enlarged Image">
+            <button onclick="closeLightbox()">Eww</button>
+        </div>
+    
+        <script>
+            document.getElementById('overlay').addEventListener('click', function() {
+            this.style.display = 'none'; // Hide the overlay when clicked
+            });
+
+            function enlargeImage(img) {
+            document.getElementById("lightbox-img").src = img.src;
+            document.getElementById("lightbox").style.display = "flex";
+            }
+
+            function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+            }
+        </script>
+    
+    </body>
+    
+</html>

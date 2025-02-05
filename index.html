@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monopoly</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+
+    <header>
+    </header>
+
+
+    <body>
+
+        <div class="container">
+            <a href="about.html" target="_blank">
+                <div id="portal">
+                    <img src="img/monopolyyy.png" alt="creepy old porcelain doll dressed as a bunny" width="300" height="300"></div>
+            </a>    
+            <img src="img/butc.png" class="draggable" style="top: 590px; left: 1370px;">
+            <img src="img/cloth1.png" class="draggable" style="top: 370px; left: 150px;">
+            <img src="img/cloth2.png" class="draggable" style="top: 700px; left: 500px;">
+            <img src="img/lamp.png" class="draggable" style="top: 700px; left: 1500px;">
+            <img src="img/mac.png" class="draggable" style="top: 360px; left: 1300px;">
+            <img src="img/mag1.png" class="draggable" style="top: 740px; left: 50px;">
+            <img src="img/mag2.png" class="draggable" style="top: 30px; left: 1250px;">
+            <img src="img/mag3.png" class="draggable" style="top: 390px; left: 1500px;">
+            <img src="img/newports.png" class="draggable" style="top: 700px; left: 610px;">
+            <img src="img/nosferatu.png" class="draggable" style="top: 20px; left: 450px;">
+            <img src="img/cigp.png" class="draggable" style="top: 425px; left: 510px;">
+            <img src="img/pokemon.png" class="draggable" style="top: 370px; left: 290px;">
+            <img src="img/toy.png" class="draggable" style="top: 700px; left: 200px;">
+            <img src="img/boot.png" class="draggable" style="top: 390px; left: 1390px;">
+            <img src="img/book1.png" class="draggable" style="top: 730px; left: 1350px;">
+            <img src="img/book2.png" class="draggable" style="top: 375px; left: 680px;">
+            <img src="img/ham.png" class="draggable" style="top: 700px; left: 1050px;">
+            <img src="img/garf.png" class="draggable" style="top: 40px; left: 1400px;">
+            <img src="img/vaase.png" class="draggable" style="top: 340px; left: 1550px;">
+            <img src="img/disco.png" class="draggable" style="top: 220px; left: 695px;">
+            <img src="img/sodacase.png" class="draggable" style="top: 420px; left: 860px;">
+            <img src="img/clock.png" class="draggable" style="top: -50px; left: 50px;">
+            <img src="img/alarm_clock_PNG76.png" class="draggable" style="top: 620px; left: 1200px;">
+            <img src="img/money.png" class="draggable" style="top: 5px; left: 190px;">
+            <img src="img/phone.png" class="draggable" style="top: 30px; left: 1000px;">
+        </div>
+
+        <script>
+            document.querySelectorAll('.draggable').forEach(img => {
+            let isDragging = false;
+
+            img.addEventListener('mousedown', (event) => {
+            isDragging = false;
+
+            let shiftX = event.clientX - img.getBoundingClientRect().left;
+            let shiftY = event.clientY - img.getBoundingClientRect().top;
+
+            function moveAt(pageX, pageY) {
+            img.style.left = pageX - shiftX + 'px';
+            img.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+            isDragging = true;
+            moveAt(event.pageX, event.pageY);
+            }
+
+             document.addEventListener('mousemove', onMouseMove);
+
+            img.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            });
+
+            img.ondragstart = () => false;
+            });
+            });
+
+            // Ensure that clicking on the portal image opens the link without any interference
+        const portal = document.getElementById('portal');
+        portal.addEventListener('mousedown', (event) => {
+            event.stopPropagation(); // Prevent drag event from blocking click
+        });
+
+        </script>
+
+    </body>
+
+</html>
